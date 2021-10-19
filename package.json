@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-express-petclinic-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "jest": "^27.2.5",
+    "moment": "^2.29.1",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.13",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.7.0",
+    "sequelize-cli": "^6.2.0",
+    "winston": "^3.3.3"
+  }
+}
