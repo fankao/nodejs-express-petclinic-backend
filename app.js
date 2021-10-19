@@ -1,20 +1,17 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const logger = require('./utils/logger')
+const AppError = require('./utils/appError');
+//const globalErrorHandler = require('./controllers/errorController');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// Start express app
+const app = express();
 
-var app = express();
+app.all('*', (req, res, next) => {
+    const err = `Can't find ${req.originalUrl} on this server!`;
+    logger.error(err)
+    next(new AppError(err, 404));
+});
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use(globalErrorHandler);
 
 module.exports = app;
