@@ -1,16 +1,20 @@
 {
   "name": "nodejs-express-petclinic-backend",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "test": "jest --watchAll --verbose --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
     "express": "~4.16.1",
-    "jest": "^27.2.5",
     "moment": "^2.29.1",
     "morgan": "~1.9.1",
     "path": "^0.12.7",
@@ -21,6 +25,11 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.13",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.6"
   }
 }
