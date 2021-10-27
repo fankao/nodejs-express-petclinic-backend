@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const ownerRoutes = require('./ownerRoutes');
+const petRoutes = require('./petRoutes');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const router = express();
+
+router.use('/petclinic/api/owners',ownerRoutes);
+
+router.use('/petclinic/api/pets',petRoutes);
 
 module.exports = router;
