@@ -5,10 +5,14 @@
   "scripts": {
     "dev": "nodemon server.js",
     "migrate": "npx sequelize-cli db:migrate",
-    "test": "jest --watchAll --verbose --coverage"
+    "test": "jest --testTimeout=10000"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "verbose": true
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

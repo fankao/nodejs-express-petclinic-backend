@@ -30,10 +30,6 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
-sequelize.authenticate()
-  .then(() => logger.info('Database connected...'))
-  .catch(err => logger.error(`${err.name} ${err.message}`));
-
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

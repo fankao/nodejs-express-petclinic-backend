@@ -26,7 +26,11 @@ module.exports = {
     username: process.env.PROD_DB_USERNAME,
     password: process.env.PROD_DB_PASSWORD,
     database: process.env.PROD_DB_NAME,
+    schema: process.env.PROD_DB_SCHEMA,
     host: process.env.PROD_DB_HOSTNAME,
     dialect: 'postgres',
+    define: {
+      timestamps: false
+    },
   },
 }
