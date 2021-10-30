@@ -54,6 +54,9 @@ exports.getOwner = catchAsync(async (req, res, next) => {
             }
         ]
     });
+    if (!owner) {
+        return next(new AppError('No owner found with that ID', 404));
+    }
     res.status(200).json(owner);
 });
 exports.createOwner = catchAsync(async (req, res, next) => {

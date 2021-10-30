@@ -2,6 +2,7 @@
   "name": "nodejs-express-petclinic-backend",
   "version": "1.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "migrate": "npx sequelize-cli db:migrate",
