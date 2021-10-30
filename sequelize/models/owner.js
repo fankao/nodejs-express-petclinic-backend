@@ -19,11 +19,36 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Owner.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    address: DataTypes.STRING,
-    city: DataTypes.STRING,
-    telephone: DataTypes.STRING
+    firstName: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    address: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    city: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    telephone: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true,
+      }
+    }
   }, {
     sequelize,
     modelName: 'Owner',
