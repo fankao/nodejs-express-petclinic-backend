@@ -1,6 +1,5 @@
 const request = require('supertest');
-const app = require('../app');
-const ownerApi = require('../apis/ownerApi');
+const app = require('../app')
 describe('Test the owner', () => {
     beforeEach(async () => {
 
@@ -11,7 +10,7 @@ describe('Test the owner', () => {
         expect(res.body[0]).toHaveProperty('pets');
     });
 
-    test('Should create new owner', async () => {
+    test('Should not create new owner', async () => {
         const body = {
             address: "1253 Centre Park",
             city: "",
